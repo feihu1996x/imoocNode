@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/feihu1996x/imoocNode#readme",
   "dependencies": {
+    "bluebird": "^3.5.3",
     "cheerio": "^1.0.0-rc.2"
   }
 }
