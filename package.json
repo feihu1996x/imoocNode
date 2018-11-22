@@ -1,0 +1,22 @@
+{
+  "name": "imoocnode",
+  "version": "1.0.0",
+  "description": "> 在imooc.com上学习Node.js",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feihu1996x/imoocNode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/feihu1996x/imoocNode/issues"
+  },
+  "homepage": "https://github.com/feihu1996x/imoocNode#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2"
+  }
+}
