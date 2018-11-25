@@ -11,7 +11,7 @@ let options = {
     hostname: 'dev.feihu1996.cn',
     port: 80,
     path: '/koaMovie/movie/comment',
-    method: 'POST',
+    method: 'POST', // 默认会设置为GET
     headers: {
         'Accept': '*/*',
         'Accept-Encoding': 'gzip, deflate',
@@ -27,15 +27,23 @@ let options = {
     },
 };
 
-const req = http.request(options, (res)=>{
+// 调用http.request()工厂方法
+// 创建一个http.ClientRequest实例
+// 传入options对象和回调函数
+// 传入的回调函数会监听response事件
+// HTTP请求的正文内容
+// 实际上是通过response对象的数据流获得的
+const req = http.request(options, (res) => {
     console.log(`STATUS: ${res.statusCode}`);
     console.log(`HEADERS: ${JSON.stringify(res.headers)}`);
     res.setEncoding('utf8');
     res.on('data', (chunk) => {
-      console.log(`BODY: ${chunk}`);
+        // 监听response对象的data事件
+        // 以便于数据可用时就能处理
+        console.log(`BODY: ${chunk}`);
     });
     res.on('end', () => {
-      console.log('No more data in response.');
+        console.log('No more data in response.');
     });
 });
 
@@ -45,4 +53,6 @@ req.on('error', (e) => {
 
 req.write(postData);
 
+// request会等待end()调用后
+// 才初始化HTTP请求
 req.end();
