@@ -13,10 +13,10 @@ http
         //     }
         // });
 
-        // 一边读一边pipe
+        // 一边读一边响应
         // fs.createReadStream('../buffer/logo.png').pipe(res);
         
-        // 一边下载一边pipe
+        // 一边下载一边响应
         request('https://img1.mukewang.com/szimg/59c860220001247d05400300-360-202.jpg')
             .pipe(res);
     })

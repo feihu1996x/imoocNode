@@ -4,7 +4,7 @@ const Writable = require('stream').Writable;
 let readStream = new Readable(),
     writeStream = new Writable();
 
-readStream.push('I ');
+readStream.push('I ');  // 将触发'data'事件
 readStream.push('Love ');
 readStream.push('You\n');
 readStream.push(null);
@@ -15,4 +15,7 @@ writeStream._write = function(chunk, encode, callback){
     callback && callback();
 };
 
+// 管道：
+// 一边读取
+// 一边写入
 readStream.pipe(writeStream);

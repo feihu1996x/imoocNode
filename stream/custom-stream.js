@@ -2,6 +2,7 @@ var stream = require('stream');
 var util = require('util');
 
 function ReadStream(){
+    // 自定义可读流
     stream.Readable.call(this);
 }
 
@@ -15,6 +16,7 @@ ReadStream.prototype._read = function(){
 };
 
 function WriteStream(){
+    // 自定义可写流
     stream.Writable.call(this);
     this._cached = new Buffer('');
 }
@@ -28,6 +30,7 @@ WriteStream.prototype._write = function(chunk, encode, callback){
 };
 
 function TransformStream(){
+    // 自定义转换流
     stream.Transform.call(this);
 }
 
