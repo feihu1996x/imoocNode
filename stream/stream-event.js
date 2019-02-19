@@ -33,6 +33,6 @@ readStream
     .on('readable', function(){
         console.log('data is readable');
     })
-    .on('error', function(){
+    .on('error', function(e){
         console.log('data read error: ' + e);
     });
